@@ -14,7 +14,7 @@ const BmiCal = () => {
 
         if(weight === 0 || height === 0){
 
-            alert('Please Enter a Valid nuber')
+            alert('Please Enter a Valid number')
         }
         else{
             let bmiFomular = (weight / (height * height)* 703);

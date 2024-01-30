@@ -137,3 +137,22 @@
 .signbtn>button:hover{
     color: var(--green);
 }
+.links{
+    text-decoration: none;
+    color: inherit;
+
+}
+.links:focus{
+    text-decoration: none;
+
+}
+.links button.btn{
+    border-radius: 1rem;
+
+}
+.links-G button.btn{
+    color: white;
+    background-color: var(--green);
+    width: 8rem;
+
+}

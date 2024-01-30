@@ -3,6 +3,7 @@ import './Head.css'
 import Nav from '../Nav/Nav'
 import Headerimage from "../../../Images/choose-img.png"
 import Heart from "../../../Images/heart.png"
+import { Link } from 'react-router-dom'
 
 const Head = () => {
   return (
@@ -32,7 +33,7 @@ const Head = () => {
       </div>
 
       <div className="head-button">
-        <button className="btn">Get Started</button>
+      <Link to="/Login"className="links-G"><button className="btn">Get Started</button></Link>
         <button className="btn">Learn More</button>
       </div>
 
@@ -41,7 +42,7 @@ const Head = () => {
     </div>
     <div className="right-head">
       <div className="signbtn">
-        <button className="btn">Sign in</button>
+        <Link to="/Login"className="links"><button className="btn">Sign in</button></Link>
         <button className="btn">Sign up</button>
       </div>
     <div className="heart-rate">

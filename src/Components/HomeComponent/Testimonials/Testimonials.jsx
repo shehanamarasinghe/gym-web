@@ -7,7 +7,7 @@ import rightArrow from '../../../Images/rightArrow.png'
 const Testimonials = () => {
     const [selected, setSelected] = useState(0);
     const tLength = testimonialsData.length;
-
+ 
   return (
     <div className="Testimonials">
         <div className="left-t">

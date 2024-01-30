@@ -1,6 +1,7 @@
 import Home from "./pages/Home/Home";
-import Register from "./pages/Register";
+
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import Login from "./pages/Signup/Login";
 
   
 
@@ -9,11 +10,9 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route index element = {<Home/>} />
-      <Route index element = {<Register/>} />
-      <Route index element = {<Home/>} />
-      <Route index element = {<Home/>} />
-
+      <Route path="/" element = {<Home/>} />
+      <Route path="/Login" element = {<Login/>} />
+    
 
     </Routes>
     </BrowserRouter>
