@@ -2,6 +2,7 @@ import React from "react";
 import './Login.css';
 import bgimage from '../../Images/Image1.jpeg';
 import Gicon from '../../Images/Google-icon.png';
+import { Link } from "react-router-dom";
 
 const Login =()=>{
     return(
@@ -34,7 +35,7 @@ const Login =()=>{
                             </div>
                             <div className="Log-Button">
                                 <button className="Log-b">Log in</button>
-                                <button className="Log-s">Register</button>
+                                <Link to ="/Register" className="link-A"> <button className="Log-s">Register</button></Link>
                             </div>
                             <div className="or-f">
                                 <div className="or-f-s"></div>
@@ -48,8 +49,7 @@ const Login =()=>{
                                 </div>
                             </div>
                             <div className="bottom-form">
-                                <p>Don't have an Account?<span>Signup</span></p>
-
+                                <p>Don't have an Account? <Link to ="/Register" className="link-G"> <span>Signup</span></Link></p>
                             </div>
                         </div>
                 </div>

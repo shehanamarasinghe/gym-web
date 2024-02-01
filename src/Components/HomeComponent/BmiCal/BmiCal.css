@@ -131,7 +131,7 @@ h1, h2, h3 {
     flex: 1;
  }
 
- .Container{
+ .Container-Bmi{
     padding: 0 2rem;
     display: flex;
     gap: 2rem;

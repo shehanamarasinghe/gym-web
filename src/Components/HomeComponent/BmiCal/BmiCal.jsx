@@ -38,7 +38,7 @@ const BmiCal = () => {
 
  
   
-    <div className='Container'>
+    <div className='Container-Bmi'>
         <div className="left-bm">
         <div className="calculate__container container grid">
             <div className="calculate__content">

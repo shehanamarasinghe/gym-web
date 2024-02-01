@@ -1,0 +1,362 @@
+
+.background{
+    background: linear-gradient(to bottom, #ff004c, #0b0121);
+    overflow-y: auto;
+  
+  }
+  
+  .wrapper{
+    
+    padding: 40px 50px;
+    z-index: 1;
+    align-content: center;
+    overflow-y: auto;
+    
+  
+  
+  }
+  
+  .containers{
+    height: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background-color: rgb(255, 255, 255);
+      
+      
+    }
+    
+    .left-c {
+      position: relative;
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .bgimage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding: 6px;
+      padding-left: 8px;
+      padding-top: 8px;
+      justify-content: space-between;
+    }
+    
+    .bgimage1 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding: 6px;
+      padding-left: 8px;
+      padding-top: 8px;
+      justify-content: space-between;
+    }
+    .head-text {
+      position: absolute;
+      top: 27%;
+      left: 15%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .Text-H {
+      font-size: 2.5rem;
+      color: white;
+      font-weight: 800;
+      margin-top: 1rem;
+      margin-bottom: 0rem;
+    }
+    
+    .Text-p {
+      font-size: 1.25rem;
+      color: rgb(255, 255, 255);
+      font-weight: normal;
+    }
+    
+    .right-c {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      background-color: white;
+      flex-direction: column;
+      padding-left: 2.5rem;
+      justify-content: space-between;
+    
+     
+    }
+    
+    .form-c {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.1rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+    
+    .head-form {
+      font-size: 2rem;
+      font-weight: 600;
+      color: black;
+      column-gap: normal;
+    }
+    
+    .form-p {
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+      color: black;
+    }
+    
+    .bottom-form {
+      width: 100%;
+    }
+    
+    .bottom-form > p {
+      font-size: 0.875rem;
+      color: black;
+    }
+    
+    .bottom-form > p > span {
+      font-weight: 600;
+      color: black;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+  
+    .form-c-H{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: 450px;
+      
+    }
+    
+    .form-in{
+      width: 100%;
+      display: flex;
+      flex-direction:column;
+    }
+  
+    .input{
+      width: 100%;
+      color: black;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem; 
+      border-bottom:1px solid black ;
+      background-color: transparent;
+      outline: 1px;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-top: 0.7rem;
+    }
+
+    .form-in>label{
+      padding-top: 1rem;
+      font-size: 0.87rem;
+    }
+  
+    .form-in>input::placeholder{
+      color: rgb(52, 50, 50);
+      padding-left: 3px;
+      opacity: 50%;
+    }
+  
+    .Fogot-c{
+      width: 100%;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .F-text{
+      width: 100%;  
+      display: flex;
+      align-items: center;
+    }
+  
+    .F-text>input{
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      
+    }
+  
+    .F-text>p{
+      font-size: 0.875rem;
+      color: black;
+    }
+    .F-link{
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: black;
+      font-weight: 500;
+      white-space: nowrap;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+  
+    }
+  
+    .Log-button{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    .Log-b{
+      width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 0.375rem;
+      padding: 1rem;
+      color: white;
+      margin-top: 0.5rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .Log-s{
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 2px solid;
+      border-color: black;
+      border-radius: 0.375rem;
+      padding: 1rem;
+      color: rgb(0, 0, 0);
+      margin-top: 0.5rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+      cursor: pointer;
+      
+    }
+  
+    .or-f{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  
+    .or-f-s{
+      width: 100%;
+      background-color: black;
+      height: 1px;
+    }
+    
+    .or-f-p{
+      position: absolute;
+      color: black;
+      background-color:rgb(255, 255, 255) ;
+      opacity: 0.8; 
+      font-size: 1.125rem;
+    }
+  
+    .Log-s>img{
+      height: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .inputName{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+     
+    }
+
+    .inputf{
+      width: 45%;
+      color: black;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem; 
+      border: none;
+      border-bottom:1px solid black ;
+      background-color: transparent;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-top: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .inputf-A{
+      width: 25%;
+      color: black;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem; 
+      border: none;
+      border-bottom:1px solid black ;
+      background-color: transparent;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-top: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+    }
+
+    .inputf::placeholder{
+      color: rgb(52, 50, 50);
+      padding-left: 3px;
+      opacity: 50%;
+    }
+
+    .inputName>label{
+
+      padding-top: 1rem;
+      font-size: 0.87rem;
+      padding-right: 8.8rem;
+
+    }
+
+    .radio{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .radio-l{
+      font-size: 0.85rem;
+      align-items: center;
+      padding: 18px;
+      padding-top: 0px;
+      padding-bottom: 2px;
+      padding-left: 0rem;
+  
+    }
+
+    .input-R-B{
+      display: flex;
+      padding-bottom: 0.7rem;
+      
+    }
+    .link-G{
+      cursor: pointer;
+      font-size: 0.875rem;
+      color: black;
+      font-weight:600;
+      white-space: nowrap;
+      text-decoration: underline;
+      text-underline-offset:2px;
+      
+
+    }
+  
+  
+  
+   

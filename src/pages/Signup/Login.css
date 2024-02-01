@@ -245,3 +245,25 @@
     height: 1.5rem;
     margin-right: 0.5rem;
   }
+  .link-G{
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: black;
+    font-weight:600;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset:2px;
+    
+
+  }
+
+  .link-A{
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: black;
+    font-weight:600;
+    white-space: nowrap; 
+    
+
+  }
+
