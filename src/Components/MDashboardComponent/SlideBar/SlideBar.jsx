@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../../../Images/LogoBlack.jpeg'
+import Logo from '../../../Images/LogoBlack.png'
 import DashboardCustomizeRoundedIcon from '@mui/icons-material/DashboardCustomizeRounded';
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import FastfoodRoundedIcon from '@mui/icons-material/FastfoodRounded';
@@ -24,11 +24,11 @@ const SlideBar = () => {
                 <li><FastfoodRoundedIcon className='icon'/> <span> Meal Plan</span> </li>
                 <li><FitnessCenterRoundedIcon className='icon'/> <span> Workouts</span> </li>
                 <li><AddchartRoundedIcon className='icon'/> <span> Stats</span> </li>
-                <li><NotificationsActiveRoundedIcon className='icon'/> <span> Payment</span> </li>
-                <li><SettingsSuggestRoundedIcon className='icon'/> <span> Notifications</span> </li>
-                <li><AccountBoxRoundedIcon className='icon'/> <span> Settings</span> </li>
-                <li><LogoutRoundedIcon className='icon'/> <span>Profile</span> </li>
-                <li><PaidRoundedIcon className='icon'/> <span>Logout</span> </li>
+                <li><PaidRoundedIcon className='icon'/> <span> Payment</span> </li>
+                <li><NotificationsActiveRoundedIcon className='icon'/> <span> Notifications</span> </li>
+                <li><SettingsSuggestRoundedIcon className='icon'/> <span> Settings</span> </li>
+                <li><AccountBoxRoundedIcon className='icon'/> <span>Profile</span> </li>
+                <li><LogoutRoundedIcon className='icon'/> <span>Logout</span> </li>
 
             </ul>
         </div>

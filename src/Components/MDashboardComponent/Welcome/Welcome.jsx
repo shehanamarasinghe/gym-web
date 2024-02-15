@@ -1,6 +1,6 @@
 import React from 'react'
 import './Welcome.css'
-import welcome from "../../../Images/Welcome.jpeg"
+import welcome from "../../../Images/Welcome.png"
 
 
 
