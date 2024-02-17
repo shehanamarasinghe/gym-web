@@ -1,168 +1,117 @@
 
-.background{
-    background: linear-gradient(to bottom, #ff004c, #0b0121);
-    overflow-y: auto;
+.Register-N{
+   display: flex;
+   justify-content: center;
+   background-color: rgb(183, 183, 183);
+   padding: 50px;
+  }
+  
+  .Register-New{
+   display: flex;
+   width: 1050px;
+   height: fit-content;
+   justify-content: center;
+   align-content: center;
+   border-radius: 20px;
+   -webkit-box-shadow:2px 4px 10px #000000;
+   box-shadow: 2px 4px 10px 1px #c4bfbf;
   
   }
   
-  .wrapper{
-    
-    padding: 40px 50px;
-    z-index: 1;
-    align-content: center;
-    overflow-y: auto;
-    
-  
-  
-  }
-  
-  .containers{
-    height: auto;
+  .left-R{
       display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      background-color: rgb(255, 255, 255);
+      flex: 1;
+      background-color:rgb(248, 6, 99);
+      border-radius: 20px 0px 0px 20px;
       
       
     }
     
-    .left-c {
-      position: relative;
-      width: 50%;
-      height: 100vh;
+    .Right-R {
       display: flex;
-      flex-direction: column;
+      flex: 1;
+      background-color:rgb(255, 255, 255);
+      padding:20px;
+      border-radius: 0px 20px 20px 0px;
+      
     }
     
-    .bgimage {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      padding: 6px;
-      padding-left: 8px;
-      padding-top: 8px;
-      justify-content: space-between;
+    .leftimg {
+      border-radius: 20px 0px 0px 0px;
+      margin-top: 5px;
+      margin-left:5px;
+      margin-bottom: 5px;
+      margin-right: 5px;
+
     }
     
-    .bgimage1 {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      padding: 6px;
-      padding-left: 8px;
-      padding-top: 8px;
-      justify-content: space-between;
+    .left-img {
+      border-radius: 0px 0px 0px 20px;
+      margin-left:5px;
+      margin-bottom: 5px;
+      margin-right: 5px;
+      
     }
-    .head-text {
-      position: absolute;
-      top: 27%;
-      left: 15%;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .Text-H {
-      font-size: 2.5rem;
-      color: white;
-      font-weight: 800;
-      margin-top: 1rem;
-      margin-bottom: 0rem;
-    }
-    
-    .Text-p {
-      font-size: 1.25rem;
-      color: rgb(255, 255, 255);
-      font-weight: normal;
-    }
-    
-    .right-c {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      background-color: white;
-      flex-direction: column;
-      padding-left: 2.5rem;
-      justify-content: space-between;
-    
-     
-    }
-    
     .form-c {
-      width: 70%;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 0.1rem;
-      margin-top: 0.2rem;
-      margin-bottom: 0.2rem;
+     display: flex;
+     flex-direction: column;
+     padding: 10px;
+     margin-bottom: 5px;
     }
     
     .head-form {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      color: rgb(0, 0, 0);
       font-weight: 600;
-      color: black;
+      margin:0;
       column-gap: normal;
     }
     
-    .form-p {
+    .form-p{
       font-size: 1rem;
-      margin-bottom: 0.1rem;
-      color: black;
+      color: rgb(0, 0, 0);
+      margin: 0;
     }
     
-    .bottom-form {
-      width: 100%;
-    }
-    
-    .bottom-form > p {
-      font-size: 0.875rem;
-      color: black;
-    }
-    
-    .bottom-form > p > span {
-      font-weight: 600;
-      color: black;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      cursor: pointer;
-    }
-  
-    .form-c-H{
-      width: 100%;
+    .img-R {
       display: flex;
       flex-direction: column;
-      max-width: 450px;
-      
+    
+     
     }
     
     .form-in{
       width: 100%;
       display: flex;
-      flex-direction:column;
+      flex-direction: column;
     }
-  
-    .input{
+    
+    .form-in>.input-in {
       width: 100%;
       color: black;
       padding-top: 0.2rem;
-      padding-bottom: 0.2rem; 
-      border-bottom:1px solid black ;
+      padding-bottom: 0.2rem;
+      border-bottom:1px solid black;
       background-color: transparent;
       outline: 1px;
-      margin-top: 0.5rem;
+      margin-top:0.5rem;
+      padding-top: 0.5rem;
       margin-bottom: 0.5rem;
-      padding-top: 0.7rem;
+      ;
     }
-
+    
     .form-in>label{
-      padding-top: 1rem;
-      font-size: 0.87rem;
+     padding-top: 1rem;
+     font-size: 0.87rem;
+
     }
-  
-    .form-in>input::placeholder{
-      color: rgb(52, 50, 50);
-      padding-left: 3px;
+    
+    .form-in>input::placeholder {
+      color: rgb(0, 0, 0);
+      padding-left:3px;
       opacity: 50%;
     }
+    
   
     .Fogot-c{
       width: 100%;
@@ -183,11 +132,122 @@
       margin-right: 0.5rem;
       
     }
-  
-    .F-text>p{
-      font-size: 0.875rem;
-      color: black;
+
+    .background{
+      background: linear-gradient(to bottom,#ff004c,#000000);
     }
+
+    .wrapper{
+      padding: 40px;
+      align-content: center;
+      padding-left: 190px;
+      overflow-y: auto;
+    }
+
+    .container{
+      display: flex;
+      align-items: flex-start;
+      border-radius: 10px;
+
+    }
+
+    .left-c{
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .bgimage{
+      padding: 6px;
+      justify-content: space-between;
+    }
+  
+    .bgimage2{
+      padding: 6px;
+      padding-left: 0px;
+      padding-top: 4px;
+      justify-content: space-between;
+    }
+    
+    .head-text{
+
+      position: absolute;
+      top: 27%;
+      left: 15%;
+      display: flex;
+      flex-direction: column;
+    }
+    .Text-H{
+      font-size: 2.5rem;
+      color: white;
+      font-weight: 800;
+      margin-top: 1rem;
+      margin-bottom: 0rem;
+    }
+
+    .Text-p{
+      font-size: 1.25rem;
+      color: rgb(255, 255, 255);
+      font-weight: normal;
+    }
+
+    .right-c{
+      display: flex;
+      flex: 1;
+      background-color: white;
+      flex-direction: column;
+      padding: 2rem;
+      justify-content: space-between;
+
+    }
+    .form-c{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.1rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+
+    }
+    .head-form{
+      font-size: 2rem;
+      font-weight: 600;
+      color: black;
+      column-gap: normal;
+    }
+
+    .bottom-form{
+      width: 100%;
+    }
+    .bottom-form>p{
+      font-size: 0.875rem;
+      color: #000000;
+    }
+
+    .bottom-form>p>span{
+      font-weight: 600;
+      color: black;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+    .form-c-H{
+
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: 450px;
+    }
+    .form-in{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+.F-text>p{
+  font-size: 0.875rem;
+  color: #000000;
+}
+
     .F-link{
       cursor: pointer;
       font-size: 0.875rem;
@@ -310,7 +370,21 @@
       justify-content: space-between;
 
     }
+.input-in{
+  width: 100%;
+  color: #000000;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  margin-top: o,5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
 
+}
     .inputf::placeholder{
       color: rgb(52, 50, 50);
       padding-left: 3px;
@@ -356,7 +430,12 @@
       
 
     }
-  
+  .error-span{
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+
+  }
   
   
    

@@ -41,7 +41,7 @@ const Login =()=>{
                     <div className="rightlogin">
                         <div className=" form-c-H">
                             <div className="form-c">
-                                <h3 className="head-form"> Login</h3>
+                                <h3 className="head-form">Login</h3>
                                 <p className="form-p">Welcome Back! Please Details.</p>
                             </div>
                             <form action="" onSubmit={handleSubmit}>
@@ -57,8 +57,10 @@ const Login =()=>{
                                 <div className="F-text">
                                     <input type="checkbox"></input>
                                     <p>Remember Me for 30 days</p>
+
+                                    <div> <p className="F-Link">Forgot password?</p></div>
+                                   
                                 </div>
-                                <p className="F-Link">Forgot password?</p>
                             </div>
                             <div className="Log-button">
                                 <button  type ="submit" className="Log-b">Log in</button>

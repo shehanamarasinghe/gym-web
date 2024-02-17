@@ -1,48 +1,67 @@
-import React from 'react';
+import React,{useState} from 'react'
 import './Register.css';
 import bgimage from'../../Images/Image1.jpeg';
 import bgimage2 from'../../Images/Image3.jpeg';
 import { Link } from 'react-router-dom';
-
+import validation from'../../Validations/RegisterValidation';
 const Register = () =>{
-    return (
-        <div className='background'>
-            <div className='wrapper'>
-                <div className='containers'>
-                <div className='left-c'>
-                    <div className='head-text'>
-                        <h1 className='Text-H'> Turn Your ideas into reality</h1>
-                        <p className='Text-p'>Start for free & get attractive offers from the community</p>
-                </div>
-                    <img src={bgimage} alt='' className='bgimage'/>
-                    <img src={bgimage2} alt='' className='bgimage1'/>
 
+
+    const[values, setValues]=useState(
+        {
+            emali:'',
+            password:''
+        }
+    )
+
+    const[errors, setErrors] =useState({})
+
+    const handleInput= (event) =>{
+        setValues(prev =>({...prev,[event.target.name]: [event.target.value]}))
+    }
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        setErrors(validation(values));
+    }
+
+
+
+    return (
+        <div className='Register-N'>
+            <div className='Register-New'>
+                <div className='left-R'>
+                <div className='img-R'>
+                <img src={bgimage} alt='' className='leftimg'/>
+                <img src={bgimage2} alt='' className='left-img'/>
                 </div>
-                <div className='right-c'>
-                    <div className='form-c-H'>
+                </div>
+                <div className='Right-R'>
+                    <div className='form-r'>
                         <div className='form-c'>
                             <h3 className='head-form'>Register</h3>
                             <p className='form-p'>Welcome Back! Please Eneter your Details</p>
 
                         </div>
+                        <form action="" onSumbit={handleSubmit}> 
                         <div className='form-in'>
                             <label> Name</label> 
                             <div className='inputName'>
-                             <input type='text' placeholder='Fname' className='inputf'/>
-                             <input type='text' placeholder='Lname' className='inputf'/>   
+                             <input type='text' placeholder='FName' className='inputf'/>
+                             <input type='text' placeholder='LName' className='inputf'/>   
                             </div>
                             <label> UserName </label>
-          <input type='text' placeholder='UserName'className='input'/>
+          <input type='text' placeholder='UserName'className='input-in'/>
           <label> Address </label>
-          <input type='text' placeholder='Address'className='input'/>
+          <input type='text' placeholder='Address'className='input-in'/>
           <div className='inputName'>
           <label> Email </label> <label>Phone No </label>
           </div>
           <div className='inputName'>
-          <input type='email' placeholder='Email' className='inputf'/>
+          <input type='email' placeholder='Email' name='email' onChange={handleInput} className='inputf'/>
           
-          <input type='tel' placeholder='Phone no' className='inputf'/>
-                    </div>
+          <input type='tel' placeholder='Phone no' className='inputf'/> </div>
+                    {errors.email && <span className='error-span'>{errors.email} </span>}
+
                     <label className='radio'> Gender </label>
                     <div className='input-R-B'>
                     <label className='radio-l'>
@@ -67,9 +86,12 @@ const Register = () =>{
           <input type='tel' placeholder='Weight' className='inputf-A'/>
           <input type='tel' placeholder='Height' className='inputf-A'/> </div>
           <label> Password </label>
-          <input type='password' placeholder='Password'className='input'/>
+          <input type='password' placeholder='Password' name='password' onChange={handleInput} className='input-in'/>
+         {errors.password && <span className='error-span'>{errors.password} </span>}
+
           <label> Re-Type Password </label>
-          <input type='password' placeholder='Confirm Password'className='input'/>
+          <input type='password' placeholder='Confirm Password' name="password" onChange={handleInput} className='input-in'/>
+          {errors.password && <span className='error-span'>{errors.password} </span>}  
                         </div>
                         <div className='Fogot-c'>
                         <div className='F-text'>
@@ -80,10 +102,11 @@ const Register = () =>{
                         <div className='Log-button'>
                         <button className='Log-s'>Register</button>
                         </div>
-                        </div>
+                       
                         <div className='bottom-form'>
                         <p>Do you have an account ? <Link to ="/Login" className='link-G'><span>Login</span> </Link></p> 
                         </div>
+                        </form>
                     </div>
                     </div>
                 </div>
