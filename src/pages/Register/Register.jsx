@@ -3,12 +3,49 @@ import "./Register.css"
 import bgimage from '../../Images/Image1.jpeg';
 import bgimage2 from '../../Images/Image3.jpeg';
 import { Link, useNavigate } from 'react-router-dom' 
-import validation from '../../Validations/RegisterValidation';
+//import validation from '../../Validations/RegisterValidation';
 import axios from 'axios'; 
 
 function Register() {
 
-  const[values, setValues] = useState({
+  const [inputs,setInputs] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    address: "",
+    email: "",
+    phoneNo: "",
+    gender: "",
+    age: "",
+    weight: "",
+    height: "",
+    password: "",
+    confirmPassword: "",
+    
+  })
+
+  const [err,setError] = useState(null)
+  const navigate = useNavigate()
+
+  const handleChange = e =>{
+    setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
+
+  }
+
+  const handleSubmit = async e =>{
+    e.preventDefault()
+    try{
+      await axios.post("/auth/Register", inputs)
+      navigate('/Login');
+
+    }catch(err){
+      setError(err.response.data)
+
+    }
+    
+  }
+
+ /* const[values, setValues] = useState({
     firstname: '',
     lastname: '',
     username: '',
@@ -45,7 +82,7 @@ function Register() {
 
     }
   }
-
+*/
 
   return (
 
@@ -66,38 +103,38 @@ function Register() {
              <h3 className='head-form'>Register</h3>
              <p className='form-p'>Welcome Back! Please Enter Your Details. </p>
             </div>
-            <form action="" onSubmit={handleSubmit}>
+            <form action="" >
 
             <div className='form-in'>
           <label> Name </label> <div className='inputName'>
-          <input type='text' placeholder='FName' name='firstname' onChange={handleInput} className='inputf'/>
-          <input type='text' placeholder='LName' name='lastname' onChange={handleInput}  className='inputf'/></div> 
+          <input type='text' placeholder='FName' name='firstname' onChange={handleChange} className='inputf'/>
+          <input type='text' placeholder='LName' name='lastname' onChange={handleChange}  className='inputf'/></div> 
           <label> UserName </label>
-          <input type='text' placeholder='UserName' name='username' onChange={handleInput} className='input-in'/>
+          <input type='text' placeholder='UserName' name='username' onChange={handleChange} className='input-in'/>
           <label> Address </label>
-          <input type='text' placeholder='Address' name='address' onChange={handleInput} className='input-in'/>
+          <input type='text' placeholder='Address' name='address' onChange={handleChange} className='input-in'/>
           <div className='inputName'>
           <label> Email </label> <label>Phone No </label></div>
           <div className='inputName'>
-          <input type='email' placeholder='Email' name='email' onChange={handleInput} className='inputf'/>
+          <input type='email' placeholder='Email' name='email' onChange={handleChange} className='inputf'/>
           
           
-          <input type='tel' placeholder='Phone no' name='phoneNo' onChange={handleInput} className='inputf'/></div>
-          {errors.email && <span className='error-span'>{errors.email}</span>}
+          <input type='tel' placeholder='Phone no' name='phoneNo' onChange={handleChange} className='inputf'/></div>
+          
           
            
            <label className='radio'> Gender </label>
             <div className='input-R-B'>
           <label className='radio-l'>
-          <input type="radio" value="male" name="gender" onChange={handleInput} className='radio-s' />
+          <input type="radio" value="male" name="gender" onChange={handleChange} className='radio-s' />
           Male
         </label>
         <label className='radio-l'>
-          <input type="radio" value="female" name="gender" onChange={handleInput} className='radio-s'/>
+          <input type="radio" value="female" name="gender" onChange={handleChange} className='radio-s'/>
           Female
         </label>
         <label className='radio-l'>
-          <input type="radio" value="other" name="gender" onChange={handleInput} className='radio-s'/>
+          <input type="radio" value="other" name="gender" onChange={handleChange} className='radio-s'/>
           Other
         </label>
         </div>
@@ -107,15 +144,15 @@ function Register() {
 
           <label> Age </label> <label>Weight </label><label>Height</label></div>
           <div className='inputName'>
-          <input type='text' placeholder='Age' name='age' onChange={handleInput} className='inputf-A'/>
-          <input type='tel' placeholder='Weight' name='weight' onChange={handleInput} className='inputf-A'/>
-          <input type='tel' placeholder='Height' name='height' onChange={handleInput} className='inputf-A'/></div>
+          <input type='text' placeholder='Age' name='age' onChange={handleChange} className='inputf-A'/>
+          <input type='tel' placeholder='Weight' name='weight' onChange={handleChange} className='inputf-A'/>
+          <input type='tel' placeholder='Height' name='height' onChange={handleChange} className='inputf-A'/></div>
           <label> Password </label>
-          <input type='password' placeholder='Password' name='password' onChange={handleInput} className='input-in'/>
-          {errors.password && <span className='error-span'>{errors.password}</span>}
+          <input type='password' placeholder='Password' name='password' onChange={handleChange} className='input-in'/>
+          
           <label> Re-Type Password </label>
-          <input type='password' placeholder='Confirm Password' name='confirmPassword' onChange={handleInput} className='input-in'/>
-          {errors.password && <span className='error-span'>{errors.password}</span>}
+          <input type='password' placeholder='Confirm Password' name='confirmPassword' onChange={handleChange} className='input-in'/>
+         
         
 
         </div>
@@ -129,9 +166,10 @@ function Register() {
         </div>
 
         <div className='Log-button'>
-          <button type='submit' className='Log-s'>Register</button>
+          <button onClick={handleSubmit} className='Log-s'>Register</button>
 
         </div>
+        {err&&<span className='error-span'>{err}</span>}
 
        
         <div className='bottom-form'>

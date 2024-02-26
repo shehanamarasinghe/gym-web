@@ -1,23 +1,18 @@
-import React from 'react'
-import './Welcome.css'
+import React, { useContext } from 'react'
+import "./Welcome.css"
 import welcome from "../../../Images/Welcome.png"
-
+import { AuthContext } from '../../../Context/authContext'
 
 
 const Welcome = () => {
-
-  let Udata;
-  Udata = {
-    username : "Shehan"
-  };
-
+  const {currentUser} = useContext(AuthContext);
 
   return (
     <div className='WelcomePost'>
         <div className='welcomeimg'> <img src ={welcome} alt=""className='welcomeimage'/>
         </div>
         <div className='welcometext'>
-            <span className='head'>Welcome {Udata.username}</span>
+            <span className='head'>Welcome {currentUser?.UserName}</span>
             <span className='para'>Make yourself stronger than your excuses </span>
         </div>
       

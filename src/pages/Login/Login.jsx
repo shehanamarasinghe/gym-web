@@ -1,13 +1,43 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Login.css"
 import bgimage from '../../Images/Image1.jpeg'
 import Gicon from '../../Images/Google-icon.png'
 import { Link, useNavigate } from 'react-router-dom' 
-import validation from '../../Validations/LoginValidations';
+//import validation from '../../Validations/LoginValidation';
 import axios from 'axios'; 
+import { AuthContext } from '../../Context/authContext'
 
 const Login = () => {
-  const[values, setValues] = useState({
+  const [inputs,setInputs] = useState({
+    username: "",
+    password: "",
+    
+  })
+
+  const [err,setError] = useState(null)
+  const navigate = useNavigate();
+
+  const {login} = useContext(AuthContext);
+
+
+  const handleChange = e =>{
+    setInputs(prev=>({...prev, [e.target.name]: e.target.value}))
+
+  }
+
+  const handleSubmit = async e =>{
+    e.preventDefault()
+    try{
+      await login(inputs)
+      navigate('/Mdashboard');
+
+    }catch(err){
+      setError(err.response.data)
+
+    }
+    
+  };
+ /* const[values, setValues] = useState({
     email:'',
     password:''
   })
@@ -29,9 +59,11 @@ const Login = () => {
 
       .then(res => {
         if(res.data === 'Success'){
-        
-          navigate('/MDashboard');
-        }else{
+          const { username } = res.data;
+          localStorage.setItem('username', username);
+          navigate('/Mdashboard');
+        }
+        else{
           alert("No Recode Found");
         }
 
@@ -39,7 +71,7 @@ const Login = () => {
       .catch(err => console.log(err));
 
     }
-  }
+  }*/
   return (
     
     <div className='login'>
@@ -60,13 +92,13 @@ const Login = () => {
           <p className='form-p'>Welcome Back! Please Enter Your Details. </p>
         </div>
 
-        <form action="" onSubmit={handleSubmit}>
+        <form action="">
 
         <div className='form-in'>
-          <input type='email' placeholder='Email' name='email' onChange={handleInput}/>
-          {errors.email && <span className='error-span'>{errors.email}</span>}
-          <input type='password' placeholder='P assword' name='password' onChange={handleInput}/>
-          {errors.password && <span className='error-span'>{errors.password}</span>}
+          <input type='text' placeholder='User_Name' name='username' onChange={handleChange}/>
+    
+          <input type='password' placeholder='Password' name='password' onChange={handleChange}/>
+          
 
         </div>
         <div className='Fogot-c'>
@@ -74,12 +106,14 @@ const Login = () => {
             <input type='checkbox'></input>
             <p>Remember Me for 30 days</p>
           </div>
+          
 
           <p className='F-link'>Fogot Password ?</p>
         </div>
+        {err&&<span className='error-span'>{err}</span>}
 
         <div className='Log-button'>
-          <button type='submit' className='Log-b'>Log in</button>
+          <button onClick={handleSubmit} className='Log-b'>Log in</button>
           <button className='Log-s'>Register</button>
 
         </div>
