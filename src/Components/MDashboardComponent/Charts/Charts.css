@@ -1,0 +1,21 @@
+.Charts{
+    flex: 4;
+    -webkit-box-shadow: 2px 4px 10px #000000;
+    box-shadow: 2px 4px 10px 1px #c4bfbf;
+    border-radius: 12px;
+    padding: 10px;
+    height: 400px;
+}
+
+.top-C{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+}
+
+.top-C>.title-C{
+    color: gray;
+    font-size: 18px;
+    font-weight: 400;
+}
