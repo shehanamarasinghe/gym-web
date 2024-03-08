@@ -1,0 +1,86 @@
+.Slidebar{
+    flex: 1;
+    border-right: 0.5px solid rgb(236, 234, 234);
+    min-height: 100vh;
+    padding-top: 7px;
+}
+
+.Dheader{
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+   padding-top: 8px;
+}
+
+.logo{
+    width: 8rem ;
+    height: auto ;
+    
+    
+}
+
+hr{
+    height: 0;
+    border: 0.5px solid rgb(236, 234, 234);
+}
+
+.List{
+    padding-left: 10px;
+
+}
+
+.List>ul{
+    margin: 0;
+    padding: 0;
+}
+.List>ul>li{
+    display: flex;
+    align-items: center;
+    padding: 13px;
+    cursor: pointer;
+    padding-bottom: 16px;
+    
+}
+
+.List>ul>li:hover{
+    background-color: lightcoral;
+}
+
+.icon{
+    font-size: 19px;
+    color: rgb(254, 13, 85);
+    margin-right: 4px;
+}
+
+.List>span {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(103, 106, 106);
+    margin-left: 15px;
+}
+
+.Bottom{
+    display: flex;
+    align-items: center;
+    margin: 12px;
+}
+
+.coloroption1{
+    width: 20px;
+    height: 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(250, 30, 74);
+    cursor: pointer;
+    background-color: white;
+    margin: 9px;
+}
+
+.coloroption2{
+    width: 20px;
+    height: 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(250, 30, 74);
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+}
