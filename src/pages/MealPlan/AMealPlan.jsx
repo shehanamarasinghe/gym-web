@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Navbar from '../../Components/ADashboardComponents/Navbar/Navbar';
-import Slidebar from '../../Components/ADashboardComponents/SlideBar/Slidebar';
+import Navbar from '../../Components/ADashboardComponent/Navbar/Navbar';
+import Slidebar from '../../Components/ADashboardComponent/SlideBar/SlideBar';
 import image1 from '../../Images/Image2.jpeg';
 import './AMealPlan.css';
-import addimage from '../../Images/Addmore.png'
+import addimage from '../../Images/Addmore.webp'
 import AMealplanAdd from './AMealplanAdd.jsx'
 
 function AMealPlan() {
