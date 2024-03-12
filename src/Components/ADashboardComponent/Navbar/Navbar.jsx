@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
-import QRCode from 'qrcode.react'; 
-import Modal from '../Modal'; 
 import "./Navbar.css"
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
 import NightsStayRoundedIcon from '@mui/icons-material/NightsStayRounded';
-import QrCode2RoundedIcon from '@mui/icons-material/QrCode2Rounded';
+import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
 import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsActiveRounded';
 import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded';
 import Profile from "../../../Images/Profile.jpeg"
+import QrcodeScanner from './QrcodeScanner';
 
-const Navbar = ({ userId }) => {
-  const [showQRModal, setShowQRModal] = useState(false); 
 
-  const handleQRCodeClick = () => {
-      setShowQRModal(true);
-  };
+const Navbar = () => {
   
+
+  const [ShowModal, setShowModal] = useState(false)
+
   return (
     <div className='navbar'>
         <div className="wrapper">
@@ -32,15 +30,8 @@ const Navbar = ({ userId }) => {
                <NightsStayRoundedIcon className='icon1'/>
                </div>
                <div className="item">
-               <QrCode2RoundedIcon className='icon1' onClick={handleQRCodeClick}/>
+               <QrCodeScannerRoundedIcon className='icon1' onClick={()=> setShowModal(true)}/>
                </div>
-               {showQRModal && (
-                <div className="floating-div">
-                <Modal onClose={() => setShowQRModal(false)}>
-                    <QRCode value={`UserID: ${userId}`} />
-                </Modal>
-                </div>
-               )}
                <div className="item">
                <NotificationsActiveRoundedIcon className='icon1'/>
                <div className="counter">1</div>
@@ -56,10 +47,10 @@ const Navbar = ({ userId }) => {
             </div>
             
         </div>
-       
+        {ShowModal && <QrcodeScanner onClose = {()=> setShowModal(false)}/>}
     </div>
    
   )
 }
 
-export default Navbar;
+export default Navbar;

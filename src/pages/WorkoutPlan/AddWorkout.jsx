@@ -27,54 +27,71 @@ function AMealplanAdd({onClose}) {
                 <div className="editorcontainor">
                   <ReactQuill className='editor' theme="snow" value={value} onChange={setvalue}/>
                 </div>
-                <div className="AMTable">
-                  <div className="AMTWeekdays">
-                    <h1>Weekdays</h1>
-                    <p>SunDay</p>
-                    <p>MonDay</p>
-                    <p>TuesDay</p>
-                    <p>WensDay</p>
-                    <p>ThursDay</p>
-                    <p>FriDay</p>
-                    <p>SaturDay</p>
+                
+                <div className="AWTable">
+                <div className="mainMM">
+
+                  <h1>Day One</h1>
+                  <div className="AWTWeekdays">
+                    
+                  <div className="AMBreakfast">
+                  <h1>Arms</h1>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+                 
 
                   </div>
 
+                       
                   <div className="AMBreakfast">
-                  <h1>Breakfast</h1>
+                  <h1>Legs</h1>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
+                  
 
                   </div>
-                  <div className="AMBreakfast">
-                  <h1>Lunch</h1>
+
+                
+                  </div>
+                  </div>
+                  <div className="mainMM">
+                    <h1>Day Two</h1>
+                  <div className="AWTWeekdays">
+                    <div className="AMBreakfast">
+                    <h1>Arms</h1>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
                   <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
+               
 
                   </div>
-                  <div className="AMBreakfast">
-                  <h1>Dinner</h1>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
-                  <input type='text' placeholder='Meal'/>
 
+                       
+                  <div className="AMBreakfast">
+                  <h1>Legs</h1>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+                  <input type='text' placeholder='Meal'/>
+              
+
+                  </div>
+
+                
+                  </div>
                   </div>
               </div>
               </div>
+         
               
               <div className="AMmenu">
                 <div className="AMitem">
@@ -122,8 +139,8 @@ function AMealplanAdd({onClose}) {
 
             </div>
         </div>
-    
     </div>
+
   )
 }
 

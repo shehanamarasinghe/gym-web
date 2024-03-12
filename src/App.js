@@ -1,5 +1,5 @@
 import ADashboard from "./pages/ADashboard/ADashboard.jsx";
-import MealPlan from "./pages/MealPlan/AMealPlan.jsx";
+import MealPlan from "./pages/MealPlan/MemberMeal.jsx";
 import Login from "./pages/Login/Login.jsx"
 import Register from "./pages/Register/Register.jsx"
 import MDashboard from "./pages/MDashboard/MDashboard.jsx"
@@ -14,7 +14,7 @@ function App() {
     
     <BrowserRouter>
     <Routes>
-      <Route path="/"element = {<MealPlan/>} />
+      <Route path="/"element = {<MealPlan />} />
       <Route path="/"element = {<ADashboard/>} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Register" element={<Register />} />

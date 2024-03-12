@@ -10,21 +10,21 @@ const BmiCal = () => {
     const[msg,setmsg] = useState('');
 
     const handleCalculation = (e) =>{
-        e.preventDefault()
+        e.preventDefault();
 
         if(weight === 0 || height === 0){
 
-            alert('Please Enter a Valid number')
+            alert("Please Enter a Valid number");
         }
         else{
-            let bmiFomular = (weight / (height * height)* 703);
+            let bmiFomular =( (weight / (height * height))* 703);
             setBmi(bmiFomular.toFixed(2)) 
         }
 
         if(bmi < 25){
             setmsg("You're Underweight")
         }
-        else if (bmi >= 25 || bmi <= 30){
+        else if (bmi>= 25 && bmi <= 30){
             setmsg("You're healthy")
 
         }
@@ -67,7 +67,7 @@ const BmiCal = () => {
                     </button>
                 </form>
 
-                <p className="calculate__massage" id="caculate-massage">{msg}</p>
+                <p className="calculate__massage" id="caculate-massage">Your BIM count is = {bmi} & {msg}</p>
             </div>
 
             </div>  
