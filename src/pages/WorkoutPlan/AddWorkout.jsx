@@ -4,6 +4,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+
 function AMealplanAdd({onClose}) {
 
   const [value, setvalue] = useState('');
@@ -134,6 +135,18 @@ function AMealplanAdd({onClose}) {
                   
   
                 </div>
+
+                <div className="useridget">
+                <h1>User Search</h1>
+      <input
+        type="text"
+        placeholder="Enter username"
+    
+      />
+      <button>Search</button>
+
+
+                  </div>
               </div>
             </div>
 

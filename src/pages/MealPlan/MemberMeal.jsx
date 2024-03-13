@@ -17,10 +17,17 @@ function MemberMeal() {
                
                 <label htmlFor="c1" className="MMcard">         
                     <div className="check123">
-                      <h1>Title</h1>
+                      <h1></h1>
                       <p>What is a good meal plan?A healthy eating plan: Emphasizes 
                         vegetables, fruits, whole grains, and fat-free or low-fat dairy products.</p>
+                        
                     <div className="MMTable">
+                    <div className='my'>
+                      <h1>M</h1>
+                      <h1>E</h1>
+                      <h1>A</h1>
+                      <h1>L</h1>
+                      </div>
                   <div className="MMTWeekdays">
                     <h1>Weekdays</h1>
                     <p>SunDay</p>
@@ -74,8 +81,11 @@ function MemberMeal() {
 
                   </div>
               </div>
+              
                     <div className="MMrow">
-                        <div className="MMicon">1</div>
+                     
+                        <div className="MMicon">
+                    1</div>
                         <div className="MMdescription"><button className='Memberfeed'>Reviwe</button>
                         </div>
                     </div>
@@ -84,10 +94,17 @@ function MemberMeal() {
                 <input type="radio" name="slide" id="c2" />
                 <label htmlFor="c2" className="MMcard">
                 <div className="check123">
-                      <h1>Title</h1>
+                      <h1></h1>
                       <p>What is a good meal plan?A healthy eating plan: Emphasizes 
                         vegetables, fruits, whole grains, and fat-free or low-fat dairy products.</p>
                     <div className="MMTable">
+                    <div className='my'>
+                      <h1>M</h1>
+                      <h1>E</h1>
+                      <h1>A</h1>
+                      <h1>L</h1>
+                      </div>
+                     
                   <div className="MMTWeekdays">
                     <h1>Weekdays</h1>
                     <p>SunDay</p>
@@ -153,10 +170,16 @@ function MemberMeal() {
                 <input type="radio" name="slide" id="c4" />
                 <label htmlFor="c4" className="MMcard">
                 <div className="check123">
-                      <h1>Title</h1>
+                      <h1></h1>
                       <p>What is a good meal plan?A healthy eating plan: Emphasizes 
                         vegetables, fruits, whole grains, and fat-free or low-fat dairy products.</p>
                     <div className="MMTable">
+                    <div className='my'>
+                      <h1>M</h1>
+                      <h1>E</h1>
+                      <h1>A</h1>
+                      <h1>L</h1>
+                      </div>
                   <div className="MMTWeekdays">
                     <h1>Weekdays</h1>
                     <p>SunDay</p>
@@ -220,10 +243,16 @@ function MemberMeal() {
                 <input type="radio" name="slide" id="c5" />
                 <label htmlFor="c5" className="MMcard">
                 <div className="check123">
-                      <h1>Title</h1>
+                      <h1></h1>
                       <p>What is a good meal plan?A healthy eating plan: Emphasizes 
                         vegetables, fruits, whole grains, and fat-free or low-fat dairy products.</p>
                     <div className="MMTable">
+                    <div className='my'>
+                    <h1>M</h1>
+                      <h1>E</h1>
+                      <h1>A</h1>
+                      <h1>L</h1>
+                      </div>
                   <div className="MMTWeekdays">
                     <h1>Weekdays</h1>
                     <p>SunDay</p>
@@ -279,7 +308,7 @@ function MemberMeal() {
               </div>
                     <div className="MMrow">
                         <div className="MMicon">4</div>
-                        <div className="MMdescription"><button className='Memberfeed'>Reviwe</button>
+                        <div className="MMdescription"><button className='Memberfeed'>Review</button>
                         </div>
                     </div>
                     </div>

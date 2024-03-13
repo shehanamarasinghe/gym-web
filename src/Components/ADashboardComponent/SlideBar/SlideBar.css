@@ -34,16 +34,17 @@ hr{
     margin: 0;
     padding: 0;
 }
-.List>ul>li{
+.LinkDeco>li{
     display: flex;
     align-items: center;
     padding: 13px;
     cursor: pointer;
     padding-bottom: 16px;
+    color: black;
     
 }
 
-.List>ul>li:hover{
+.LinkDeco>li:hover{
     background-color: lightcoral;
 }
 
@@ -53,7 +54,7 @@ hr{
     margin-right: 4px;
 }
 
-.List>span {
+.LinkDeco>span {
     font-size: 16px;
     font-weight: 400;
     color: rgb(103, 106, 106);

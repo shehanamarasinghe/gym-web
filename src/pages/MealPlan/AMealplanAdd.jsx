@@ -117,6 +117,15 @@ function AMealplanAdd({onClose}) {
                   
   
                 </div>
+
+                <div className="useridget">
+                <h1>User Search</h1>
+      <input
+        type="text"
+        placeholder="Enter username"
+    
+      />
+      <button>Search</button></div>
               </div>
             </div>
 

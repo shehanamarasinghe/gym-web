@@ -76,7 +76,7 @@
 }
 
 .cardbutton{
-    background-color: #4f46e5;
+    background-color: #f70338;
     color: #fff;
     font-size: 1.125rem;
     padding-left: 1.5rem; 
@@ -117,5 +117,7 @@
 
 .Adddp{
     color: #3e3e3e;
+    margin: 22px;
+    
     
 }
