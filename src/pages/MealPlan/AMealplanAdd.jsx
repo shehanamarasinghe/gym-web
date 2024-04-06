@@ -59,7 +59,7 @@ function AMealplanAdd({onClose}) {
   const handleSubmit = async e =>{
     e.preventDefault()
     try{
-      await axios.post("/auth/MemberMeal", inputs)
+      await axios.post("/meal-plans", inputs)
       navigate('/Memberworkout');
 
     }catch(err){
