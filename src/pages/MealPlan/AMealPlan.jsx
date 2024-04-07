@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import Navbar from '../../Components/ADashboardComponent/Navbar/Navbar';
-import Slidebar from '../../Components/ADashboardComponent/SlideBar/SlideBar';
+import Navbar from '../../Components/ADashboardComponents/Navbar/Navbar';
+import Slidebar from '../../Components/ADashboardComponents/SlideBar/Slidebar';
+
+import './AMealPlan.css';
+import addimage from '../../Images/Addmore.png'
+import AMealplanAdd from './AMealplanAdd.jsx'
+import AddMeal from './AddMeal.jsx';
 import image1 from '../../Images/m08.jpg';
 import image2 from '../../Images/m07.jpg';
 import image3 from '../../Images/m06.jpg';
-import image4 from '../../Images/m08.jpg';
-import './AMealPlan.css';
-import addimage from '../../Images/Addmore.webp'
-import AMealplanAdd from './AMealplanAdd.jsx'
 
 function AMealPlan() {
 
+  const [ShowModalfirst, setShowModalfirst] = useState(false)
   const [ShowModal, setShowModal] = useState(false)
 
   return (
     <div className='AMealplan'>
-     
+      
       <div className='Adashboard'>
         <Slidebar />
         <div className='ADash-Container'>
@@ -38,8 +40,12 @@ function AMealPlan() {
                 ))}
                  <div className='cardone1'>
 
-                  <img src={addimage} alt='' className='cardicon' onClick={()=> setShowModal(true)}/>
+                  <img src={addimage} alt='' className='cardicon' onClick={()=> setShowModalfirst(true)}/>
                   <p className='Adddp'>Add More Meal Plans for Cardio users</p>
+                  <div className='addbuton'>
+                  <button className='mealbuton' onClick={()=> setShowModal(true)}>Add Meal</button>
+                  <button className='mealbuton' onClick={()=> setShowModalfirst(true)}>Meal Plan</button>
+                  </div>
                   
         
                   </div>
@@ -48,7 +54,7 @@ function AMealPlan() {
           </div>
           </div>
           <div className='card2'>
-          <span className='cardspan'>Bodybuilding</span>
+          <span className='cardspan'>Cardio</span>
           <div className='minicard'>
              
              {data.map((d, index) => (
@@ -65,8 +71,12 @@ function AMealPlan() {
              ))}
                <div className='cardone1'>
 
-<img src={addimage} alt='' className='cardicon' onClick={()=> setShowModal(true)}/>
+<img src={addimage} alt='' className='cardicon' onClick={()=> setShowModalfirst(true)}/>
 <p className='Adddp'>Add More Meal Plans for Cardio users</p>
+<div className='addbuton'>
+<button className='mealbuton' onClick={()=> setShowModal(true)}>Add Meal</button>
+<button className='mealbuton' onClick={()=> setShowModalfirst(true)}>Meal Plan</button>
+</div>
 
 
 </div>
@@ -74,7 +84,7 @@ function AMealPlan() {
          </div>
           </div>
           <div className='card3'>
-          <span className='cardspan'>weight loss</span>
+          <span className='cardspan'>Cardio</span>
           <div className='minicard'>
              
              {data.map((d, index) => (
@@ -92,8 +102,12 @@ function AMealPlan() {
              ))}
                <div className='cardone1'>
 
-<img src={addimage} alt='' className='cardicon' onClick={()=> setShowModal(true)}/>
+<img src={addimage} alt='' className='cardicon' onClick={()=> setShowModalfirst(true)}/>
 <p className='Adddp'>Add More Meal Plans for Cardio users</p>
+<div className='addbuton'>
+<button className='mealbuton' onClick={()=> setShowModal(true)}>Add Meal</button>
+<button className='mealbuton' onClick={()=> setShowModalfirst(true)}>Meal Plan</button>
+</div>
 
 
 </div>
@@ -106,7 +120,9 @@ function AMealPlan() {
         </div>
         
       </div>
-      {ShowModal && <AMealplanAdd onClose = {()=> setShowModal(false)}/>}
+      {ShowModalfirst && <AMealplanAdd onClose = {()=> setShowModalfirst(false)}/>}
+      {ShowModal && <AddMeal onClose = {()=> setShowModal(false)}/>}
+    
     </div>
     
   );
@@ -120,12 +136,12 @@ const data = [
   },
   {
     name: 'Cardio Meal',
-    img: image2,
+    img: image1,
     Discription: 'Is the action of deciding meals in advance using your schedule, preferences, foods on hand, seasonal produce, sale items, etc'
   },
   {
     name: 'Cardio Meal',
-    img: image3,
+    img: image1,
     Discription: 'Is the action of deciding meals in advance using your schedule, preferences, foods on hand, seasonal produce, sale items, etc'
   },
  
