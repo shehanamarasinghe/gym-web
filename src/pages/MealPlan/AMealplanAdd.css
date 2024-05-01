@@ -175,6 +175,28 @@
     margin-bottom: 7px;
     padding: 3px;
     border: none;
-    border-bottom:1px solid black ;
+    border-bottom:1px solid rgb(0, 0, 0) ;
     background-color: transparent;
 }
+
+.useridget>h1{
+    color: black;
+    font-size: 18px;
+
+
+}
+
+.useridget>input{
+    
+    padding: 4px;
+    border: none;
+    border-bottom:1px solid rgb(0, 0, 0) ;
+    background-color: transparent;
+
+}
+
+.dropdownlist{
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+

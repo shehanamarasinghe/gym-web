@@ -14,7 +14,7 @@
 }
 
 .left-t>:nth-child(1){
-    color:rgb(255, 0, 55); 
+    color:orangered; 
     font-weight: bold;
 }
 
@@ -47,7 +47,7 @@
 .right-t>:nth-child(1){
     position: absolute;
     width: 17rem;height: 20rem;
-    border:2px solid rgb(255, 0, 55);
+    border:2px solid orange;
     background-color: transparent;
     right: 9rem;
     top: 0.9rem;
@@ -74,10 +74,4 @@
 .arrows>img{
     width: 1.5rem;
     cursor: pointer;
-    fill: rgb(255, 0, 43);
-}
-.testcolor{
-    color:rgb(255, 0, 55); 
-    font-weight: bold;
-
 }

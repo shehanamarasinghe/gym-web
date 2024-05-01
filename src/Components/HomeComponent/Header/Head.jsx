@@ -3,7 +3,7 @@ import './Head.css'
 import Nav from '../Nav/Nav'
 import Headerimage from "../../../Images/choose-img.png"
 import Heart from "../../../Images/heart.png"
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Head = () => {
   return (
@@ -33,16 +33,17 @@ const Head = () => {
       </div>
 
       <div className="head-button">
-      <Link to="/Login"className="links-G"><button className="btn">Get Started</button></Link> 
+      <Link to="/Login" className='link-G'><button className="btn">Get Started</button></Link>
         <button className="btn">Learn More</button>
-</div>
+      </div>
+
 
 
     </div>
     <div className="right-head">
       <div className="signbtn">
-        <Link to="/Login"className="links"><button className="btn">Sign in</button></Link>
-        <Link to="/Register" className='links'><button className="btn">Sign up</button></Link>
+      <Link to="/Login" className='links'><button className="btn">Sign in</button></Link>
+      <Link to="/Register" className='links'> <button className="btn">Sign up</button></Link>
       </div>
     <div className="heart-rate">
 

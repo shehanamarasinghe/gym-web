@@ -1,8 +1,8 @@
 
 import React from 'react'
 import './Memberworkout.css'
-import Slidebar from "../../Components/MDashboardComponent/SlideBar/SlideBar"
-import Navbar from '../../Components/MDashboardComponent/Navbar/Navbar'
+import Slidebar from "../../Components/MDashboardComponents/SlideBar/Slidebar"
+import Navbar from '../../Components/MDashboardComponents/Navbar/Navbar'
 
 function Memberworkout() {
   return (

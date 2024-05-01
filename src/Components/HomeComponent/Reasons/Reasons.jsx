@@ -3,7 +3,10 @@ import './Reasons.css'
 import image1 from "../../../Images/Image1.jpeg";
 import image2 from "../../../Images/Image2.jpeg";
 import image3 from "../../../Images/Image3.jpeg";
-import image4 from "../../../Images/image4.jpeg";
+import image4 from "../../../Images/image4.jpeg"
+import nb from "../../../Images/nb.png"
+import adidas from "../../../Images/adidas.png"
+import nike from "../../../Images/nike.png"
 import tick from "../../../Images/tick.png"
 
 

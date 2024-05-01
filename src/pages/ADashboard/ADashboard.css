@@ -2,12 +2,12 @@
     display: flex;
 }
 
-.Dash-Container{
+.ADash-Container{
     flex: 6;
         
 } 
 
-.widgets{
+.Awidgets{
     display: flex;
     padding-left: 20px;
     padding-right: 20px;
@@ -15,12 +15,12 @@
     gap: 20px;
 }
 
-.Welcome{
+.AWelcome{
     padding: 10px;
     padding-left: 20px;
 }
 
-.chartM{
+.AchartM{
     display: flex;
     padding: 10px 20px;
     gap: 20px;

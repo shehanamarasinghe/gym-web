@@ -3,9 +3,9 @@ import './AddWorkout.css'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import axios from 'axios';
 
-
-function AMealplanAdd({onClose}) {
+function AddWorkout({onClose}) {
 
   const [value, setvalue] = useState('');
   console.log(value)
@@ -16,6 +16,7 @@ function AMealplanAdd({onClose}) {
       onClose();
     }
   }
+
 
   return (
     <div ref={modalRef} onClick={closeModal} className='MainAddmeal'>
@@ -141,11 +142,9 @@ function AMealplanAdd({onClose}) {
       <input
         type="text"
         placeholder="Enter username"
-    
+        
       />
       <button>Search</button>
-
-
                   </div>
               </div>
             </div>
@@ -157,4 +156,4 @@ function AMealplanAdd({onClose}) {
   )
 }
 
-export default AMealplanAdd
+export default AddWorkout

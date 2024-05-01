@@ -1,3 +1,5 @@
+//Register.jsx frontend
+
 import React, { useState } from 'react'
 import "./Register.css"
 import bgimage from '../../Images/Image1.jpeg';

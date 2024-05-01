@@ -9,13 +9,13 @@ const Footer = () => {
     <div className="footer">
         <div className="sb_footer section_Padding">
             <div className="footer-links">
-                <div className="footer-links-div">
+            <div className="footer-links-div">
                     <h2>Usen Fittness Center</h2>
                     <a href='/employee'>
                         <p>Explore the transformations and success stories of our members who have achieved their fitness goals with USEN Fitness Center</p>
                         </a>
-                       </div>
-                       <div className="footer-links-div">
+                        </div>
+                <div className="footer-links-div">
                     <h4>Quick Links</h4>
                     <a href='/employee'>
                         <p>Home</p>
@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
         </div>
     </div>
-</div>
+    </div>
   ) 
 }
 

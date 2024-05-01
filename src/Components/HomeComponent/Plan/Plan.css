@@ -8,7 +8,6 @@ justify-content: center;
 color: white;
 text-transform: uppercase;
 font-style: italic;
-padding-left: 3rem;
 }
 
 .Plans-container{
@@ -47,7 +46,7 @@ padding-left: 3rem;
 }
 
 .plan>svg{
-    fill: rgb(255, 0, 43);
+    fill: rgb(255, 81, 0);
     width: 2rem;
     height: 2rem;
 }
@@ -88,7 +87,5 @@ padding-left: 3rem;
 }
 
 .Plans>:nth-child(2)>button{
-    color: rgb(255, 0, 55);
-    font-weight: bold;
-
+    color: orange;
 }

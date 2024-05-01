@@ -1,13 +1,13 @@
 //MDashboard.js frontend
 
 import React from 'react'
-import Slidebar from "../../Components/MDashboardComponent/SlideBar/SlideBar"
+import Slidebar from "../../Components/MDashboardComponents/SlideBar/Slidebar"
 import "./MDashboard.css"
-import Navbar from '../../Components/MDashboardComponent/Navbar/Navbar'
-import Widget from '../../Components/MDashboardComponent/Widget/Widget'
-import Welcome from '../../Components/MDashboardComponent/Welcome/Welcome'
-import Charts from '../../Components/MDashboardComponent/Charts/Charts'
-import Reminder from '../../Components/MDashboardComponent/Reminder/Reminder'
+import Navbar from '../../Components/MDashboardComponents/Navbar/Navbar'
+import Widget from '../../Components/MDashboardComponents/Widget/Widget'
+import Welcome from '../../Components/MDashboardComponents/Welcome/Welcome'
+import Charts from '../../Components/MDashboardComponents/Charts/Charts'
+import Reminder from '../../Components/MDashboardComponents/Reminder/Reminder'
 
 
 const MDashboard = () => {

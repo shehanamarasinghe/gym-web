@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
 import './Mail.css'
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser'
 
 const Mail = () => {
   const form = useRef()
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('Servise id', 'Template Id', form.current, 'Account Id')
+    emailjs.sendForm('service_l76ig07', 'template_7dvqo0n', form.current, 'Cg5TJSposbQamwQu5')
       .then((result) => {
           console.log(result.text);
       }, (error) => {

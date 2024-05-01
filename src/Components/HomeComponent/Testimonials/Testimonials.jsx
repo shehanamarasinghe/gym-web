@@ -7,7 +7,7 @@ import rightArrow from '../../../Images/rightArrow.png'
 const Testimonials = () => {
     const [selected, setSelected] = useState(0);
     const tLength = testimonialsData.length;
- 
+
   return (
     <div className="Testimonials">
         <div className="left-t">
@@ -16,7 +16,7 @@ const Testimonials = () => {
             <span>say about us</span>
             <span>{testimonialsData[selected].review}</span>
         <span>
-            <span className='testcolor'>
+            <span style={{color:'orange'}}>
                 {testimonialsData[selected].name}
             </span>{" "}
             -{testimonialsData[selected].status}

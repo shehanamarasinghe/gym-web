@@ -75,14 +75,12 @@
 }
 
 .head-button>:nth-of-type(1){
-    
     color: white;
     background-color: var(--green);
     width: 8rem;
 }
 
-.head-button>:nth-of-type(3) {
-    
+.head-button>:nth-of-type(2){
     color: white;
     background-color: transparent;
     width: 8rem;
@@ -125,7 +123,7 @@
 
 .headerimage{
     position: absolute;
-    top: 12.8rem;
+    top: 7.7rem;
     right: 12rem;
     width: 120rem;
 
@@ -139,22 +137,23 @@
 .signbtn>button:hover{
     color: var(--green);
 }
+
 .links{
     text-decoration: none;
     color: inherit;
-
 }
+
 .links:focus{
     text-decoration: none;
-
 }
+
 .links button.btn{
     border-radius: 1rem;
 
 }
-.links-G button.btn{
+
+.link-G button.btn{
     color: white;
     background-color: var(--green);
     width: 8rem;
-
 }

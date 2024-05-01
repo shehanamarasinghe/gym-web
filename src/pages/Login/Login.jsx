@@ -8,6 +8,7 @@ import axios from 'axios';
 import { AuthContext } from '../../Context/authContext'
 
 const Login = () => {
+  
   const [inputs,setInputs] = useState({
     username: "",
     password: "",
@@ -30,6 +31,7 @@ const Login = () => {
     try{
       await login(inputs)
       navigate('/Mdashboard');
+      
 
     }catch(err){
       setError(err.response.data)
@@ -37,6 +39,8 @@ const Login = () => {
     }
     
   };
+
+
  /* const[values, setValues] = useState({
     email:'',
     password:''
@@ -72,6 +76,8 @@ const Login = () => {
 
     }
   }*/
+
+
   return (
     
     <div className='login'>

@@ -73,10 +73,18 @@
 }
 
 .AddMbutton2{
-    cursor: pointer;
+    cursor: pointere;
     color: white ;
     background-color: teal;
     border: 1px solid teal;
     padding: 5px 7px;
 
 }
+
+.editor{
+    color: black; 
+}
+
+.ql-editor {
+    color: black; /* Change text color to black */
+  }

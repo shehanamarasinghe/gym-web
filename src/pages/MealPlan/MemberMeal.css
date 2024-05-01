@@ -92,22 +92,22 @@ input:checked + label .MMdescription {
 }
 
 .MMcard[for="c1"] {
-    background-image: url('../../Images/m01.jpg');
+    background-image: url('../../Images/Image1.jpeg');
 }
 .MMcard[for="c2"] {
-    background-image: url('../../Images/m02.jpg');
+    background-image: url('../../Images/Image2.jpeg');
    
 }
 .MMcard[for="c3"] {
-    background-image: url('../../Images/m03.jpg');
+    background-image: url('../../Images/Image3.jpeg');
   
 }
 .MMcard[for="c4"] {
-    background-image: url('../../Images/m03.jpg');
+    background-image: url('../../Images/image4.jpeg');
     
 }
 .MMcard[for="c5"] {
-    background-image: url('../../Images/m04.jpg');
+    background-image: url('../../Images/image4.jpeg');
    
 }
 
@@ -120,39 +120,28 @@ input:checked + label .MMdescription {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 70px;
+    padding-top: 30px;
     
 }
 
 .check123>h1{
-    font-size: 25px;
-    padding-top: 10%;
-    color: rgb(255, 0, 119);
-    display: flex;
-
-    
+    font-size: 24px;
+    padding: 0%;
  
 }
 
 .check123>p{
-    font-size: 16px;
+    font-size: 14px;
     width: 500px;
     text-align: center;
-    color: rgb(243, 247, 4);
-    font-style: italic;
-    
-    font: bold;
-    
 }
 
 
 .MMTable{
     color: rgb(255, 255, 255);
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    padding-right: 23%;
-    
     
 
 }
@@ -160,8 +149,6 @@ input:checked + label .MMdescription {
     display: flex;
     flex-direction: column;
     color: rgb(232, 232, 232);
- 
-    
 }
 
 .MMTWeekdays>p{
@@ -205,13 +192,12 @@ input:checked + label .MMdescription {
     padding: 6px;
     border-radius: 20px;
     margin-left: 65%;
-    background-color: rgb(241, 10, 60);
+    background-color: orange;
     border: 2px solid black;
     color: white;
 }
-.my{
-  
-   padding-right:12%;
-   padding-left: 0%;
-   color: rgb(250, 16, 113);
+
+.dropdownlist{
+    font-size: 16px;
+    margin-bottom: 8px;
 }
