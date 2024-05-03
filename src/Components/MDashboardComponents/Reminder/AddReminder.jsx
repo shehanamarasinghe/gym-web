@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import './AddReminder.css'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import AddTaskRoundedIcon from '@mui/icons-material/AddTaskRounded';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const AddReminder = ({ onClose }) => {
 
@@ -13,6 +15,32 @@ const AddReminder = ({ onClose }) => {
     }
   }
 
+  const [value, setValue] = useState('');
+  const [editorValue, setEditorValue] = useState('');
+
+
+  const [inputs, setInputs] = useState({
+    Title: '',
+    Discription: '',
+    DateTime: '',
+  });
+
+  const [err, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("/reminder", { ...inputs});
+      navigate('/Mdashboard');
+    } catch (err) {
+      setError(err.response.data);
+    }
+  };
 
   
   return (
@@ -24,17 +52,17 @@ const AddReminder = ({ onClose }) => {
           <form>
             <div className='form-element'>
               <input type='text'
-                     placeholder='Enter the Title'
+                     placeholder='Enter the Title' name='Title' onChange={handleChange}
                      required/>
 
               <input type='text'
-                     placeholder='Enter the Discription'
+                     placeholder='Enter the Discription' name='Discription' onChange={handleChange}
                      required/>
 
-              <input type='datetime-local'
+              <input type='datetime-local' name='DateTime' onChange={handleChange}
                      required/>
 
-              <button><AddTaskRoundedIcon className='rebuton'/>Create</button>
+              <button><AddTaskRoundedIcon className='rebuton' onClick={handleSubmit} />Create</button>
             </div>
           </form>
         </div>

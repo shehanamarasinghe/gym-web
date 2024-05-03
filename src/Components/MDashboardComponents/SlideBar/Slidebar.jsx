@@ -32,7 +32,7 @@ const Slidebar = () => {
             <Link to="/Memberworkout" className='LinkDeco'><li><FitnessCenterRoundedIcon className='icon'/><span>Workouts</span></li></Link>
             <Link to="/Mdashboard" className='LinkDeco'><li><DirectionsWalkRoundedIcon className='icon'/><span>exercise</span></li></Link>
             <Link to="/Mdashboard" className='LinkDeco'><li><AddchartRoundedIcon className='icon'/><span>Stats</span></li></Link>
-            <Link to="/Mdashboard" className='LinkDeco'><li><PaidRoundedIcon className='icon'/><span>Payments</span></li></Link>
+            <Link to="/MemberPayments" className='LinkDeco'><li><PaidRoundedIcon className='icon'/><span>Payments</span></li></Link>
             <Link to="/Mdashboard" className='LinkDeco'><li><NotificationsActiveRoundedIcon className='icon'/><span>Notifications</span></li></Link>
             <Link to="/Mdashboard" className='LinkDeco'><li><SettingsSuggestRoundedIcon className='icon'/><span>Settings</span></li></Link>
             <Link to="/Profile" className='LinkDeco'><li><AccountBoxRoundedIcon className='icon'/><span>Profile</span></li></Link>

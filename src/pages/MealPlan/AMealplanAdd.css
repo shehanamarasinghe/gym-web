@@ -136,6 +136,7 @@
 .AMTable{
     color: black;
     display: flex;
+    margin-top: 20px;
 }
 .AMTWeekdays{
     display: flex;

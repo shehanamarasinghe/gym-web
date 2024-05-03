@@ -1,136 +1,157 @@
-.Adashboard{
+.Adashboard {
     display: flex;
 }
 
-.ADash-Container{
-    flex: 6;
-        
+.ADash-Container {
+    flex: 6;      
 } 
 
-.card1{  
-    margin: auto;
-    padding-top: 20px;
+.card1 {
+    margin-bottom: 2px;
+    padding-top: 2px;
 }
 
-.minicard{
+.minicard {
     margin-top: 0.4rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     padding-left: 20px;
     padding-right: 20px;
-
-
 }
 
-.cardone{
+.cardone,
+.cardone1 {
     background-color: #ffffff;
-    height: 450px;
     color: #000000;
     border-radius: 0.75rem;
-    -webkit-box-shadow: 2px 4px 10px #000000;
-    box-shadow: 2px 4px 10px 1px #c4bfbf;
-    width: 25%;
-    height: 470px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px; /* Fixed width for the card */
+    height: 310px; /* Fixed height for the card */
     display: flex;
     flex-direction: column;
-    
 }
 
-
-.cardonemini{
+.cardonemini {
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     background-color: #4f46e5;
     display: flex;
-    height: 14rem;
+    height: 100px; 
     justify-content: center;
     align-items: center;
-    
 }
 
-.cardoneimage{
-    height: 11rem;
-    width: 11rem;
+.cardoneimage {
+    height: 100px; /* Adjust as needed */
+    width: 100px; /* Adjust as needed */
     border-radius: 50%;
 }
 
-.cardonedetail{
+.cardonedetail {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0.2rem; 
-    padding: 1rem;
-
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: calc(100% - 120px); /* Height calculation for the detail section */
+    overflow: auto; /* Enable scrolling if content exceeds height */
 }
 
-.cardtitle{
+.cardtitle {
     color: #000000;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.carddis{
-    color: #000000;
+.carddis {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-.cardbutton{
-    background-color: #4f46e5;
-    color: #fff;
-    font-size: 1.125rem;
-    padding-left: 1.5rem; 
-    padding-right: 1.5rem;
-    padding-top: 0.25rem; 
-    padding-bottom: 0.25rem;
-    border-radius: 0.75rem;
-}
-
-.cardspan{
-    color: #000000; 
-    font-size: 2rem;
-    font-weight: 600;
-    padding-top: 20px;
-    padding-left: 25px;
-
-
-}
-.cardone1{
-    background-color: #ffffff;
-    height: 450px;
-    color: #000000;
-    border-radius: 0.75rem;
-    -webkit-box-shadow: 2px 4px 10px #000000;
-    box-shadow: 2px 4px 10px 1px #c4bfbf;
-    width: 25%;
-    height: 470px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.cardicon{
-    width: 95px;
-    
-}
-
-.Adddp{
-    color: #3e3e3e;
-    
-}
-
-.addbuton{
-    display: flex;
-    flex-direction: row;
-
-}
-
-.mealbuton{
+.cardbutton,
+.mealbuton {
     padding: 10px;
     margin: 10px;
-    justify-content: space-between;
     border-radius: 15px;
     cursor: pointer;
-    
+    background-color: #4f46e5;
+    color: #fff;
 }
+
+.cardbutton:hover,
+.mealbuton:hover {
+    background-color: #3c358a;
+}
+
+.cardspan {
+    color: #000000; 
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 25px;
+}
+
+.cardicon {
+    width: 95px;
+}
+
+.Adddp {
+    color: #3e3e3e;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px; /* Adjust margin top as needed */
+    margin-bottom: 10px; /* Add margin bottom to separate from cards */
+  }
+  
+  .pagination__item {
+    margin: 0 3px; /* Adjust margin between pagination items */
+  }
+  
+  .pagination__link {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .pagination__link--active {
+    background-color: #4f46e5;
+    color: #fff;
+  }
+  
+  .pagination__link--disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  
+  .pagination__prev-next {
+    margin-top: 5px;
+  }
+  
+  .pagination__prev-next button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .pagination__prev-next button:hover {
+    background-color: #4f46e5;
+    color: #fff;
+  }

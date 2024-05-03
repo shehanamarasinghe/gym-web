@@ -1,4 +1,3 @@
-
 import React from 'react'
 import './Memberworkout.css'
 import Slidebar from "../../Components/MDashboardComponents/SlideBar/Slidebar"
@@ -81,8 +80,7 @@ function Memberworkout() {
       </div>
       </div>
   </div>
-                   
-            
+
                     <div className="MMrow">
                         <div className="MMicon">1</div>
                         <div className="MMdescription"><button className='Memberfeed'>Reviwe</button>

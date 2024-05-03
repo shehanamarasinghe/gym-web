@@ -14,6 +14,14 @@ import AMealplanAdd from "./Pages/MealPlan/AMealplanAdd.jsx";
 import Users from "./Pages/ADashboard/Users.jsx";
 import Profile from "./Pages/Profile/Profile.jsx";
 import EditUser from "./Pages/ADashboard/EditUser/Edituser.jsx"
+import QrcodeScannercheckout from "./Components/ADashboardComponents/Navbar/QrcodeScannerCheckout.jsx";
+import MyComponent from "./Pages/newpage.jsx";
+import UserShedule from "./Pages/MealPlan/UserSedule.jsx";
+import WUserShedule from "./Pages/WorkoutPlan/WUserSedule.jsx";
+import Payments from "./Pages/Payments/Payment.jsx";
+import MemberPayment from "./Pages/Payments/MemberPayment.jsx";
+  
+
 
 function App() {
   return (
@@ -29,13 +37,22 @@ function App() {
       <Route path="/AMealPlan" element={<AMealPlan/>}/>
       <Route path="/AWorkoutPlan" element={<WorkoutPlan/>}/>
       <Route path="/Qrcode" element={<QrcodeScanner/>}/>
+      <Route path="/Qrcodecheckout" element={<QrcodeScannercheckout/>}/>
       <Route path="/MemberMeal" element={<MemberMeal/>}/>
       <Route path="/Memberworkout" element={<Memberworkout/>}/>
       <Route path="/AddMemberMeal" element={<AMealplanAdd/>}/>
       <Route path="/Users" element={<Users/>}/>
       <Route path="/Profile" element={<Profile/>}/>
       <Route path="/edituser/:id" element={<EditUser/>}/>
-      </Routes>
+      <Route path="/mc" element={<MyComponent/>}/>
+      <Route path="/UserShedule" element={<UserShedule/>}/>
+      <Route path="/Wusershedule" element={<WUserShedule/>}/>
+      <Route path="/Payments" element={<Payments/>}/>
+      <Route path="/MemberPayments" element={<MemberPayment/>}/>
+      
+
+
+    </Routes>
     </BrowserRouter>
 
     
@@ -43,4 +60,4 @@ function App() {
 }
 
 
-export default App;
+export default App;

@@ -60,7 +60,7 @@ const Navbar = ({ onClose }) => {
               </div>
               <div className="QRaddmealbody">
                 <h1 className="QRheading">QR Code</h1>
-                <QRCode id="qr-canvas" value={`UserID: ${currentUser?.UserName}`} />
+                <QRCode id="qr-canvas" value={`${currentUser?.UserName}`} />
                   <button className='downloadbtn' onClick={downloadQRCode}>Download</button>
               </div>
             </div>

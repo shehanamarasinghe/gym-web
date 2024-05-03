@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Widget.css"
 import FiberManualRecordRoundedIcon from '@mui/icons-material/FiberManualRecordRounded';
 import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
@@ -7,9 +7,23 @@ import MedicalInformationRoundedIcon from '@mui/icons-material/MedicalInformatio
 import MonitorHeartRoundedIcon from '@mui/icons-material/MonitorHeartRounded';
 import DirectionsWalkRoundedIcon from '@mui/icons-material/DirectionsWalkRounded';
 import QuestionMarkRoundedIcon from '@mui/icons-material/QuestionMarkRounded';
+import axios from 'axios';
 
 
 const Widget = ({ type  }) => {
+
+    const [checkedInUsers, setCheckedInUsers] = useState(0);
+
+    useEffect(() => {
+      axios.get('/store-data/livedata')
+        .then(response => {
+          setCheckedInUsers(response.data.total_checked_in);
+        })
+        .catch(error => {
+          console.error('Error fetching checked-in users:', error);
+        });
+    }, []);
+  
 
     let data;
 
@@ -19,6 +33,7 @@ const Widget = ({ type  }) => {
                 title: "USERS",
                 link: "See all users",
                 status: "Open",
+                count: checkedInUsers,
                 icon1: <FiberManualRecordRoundedIcon />,
                 icon2: <PeopleAltRoundedIcon className='icon-w' />,
             };
@@ -28,6 +43,7 @@ const Widget = ({ type  }) => {
                 title: "BLOOD PRESSURE",
                 link: "See all Recodes",
                 status: "Good",
+                count: 120,
                 icon1: <HealthAndSafetyRoundedIcon />,
                 icon2: <MedicalInformationRoundedIcon className='icon-w' />,
             };
@@ -37,6 +53,7 @@ const Widget = ({ type  }) => {
                 title: "HEART RATE",
                 link: "See all Recodes",
                 status: "Good",
+                count: 72,
                 icon1: <HealthAndSafetyRoundedIcon />,
                 icon2: <MonitorHeartRoundedIcon className='icon-w' />,
             };
@@ -46,6 +63,7 @@ const Widget = ({ type  }) => {
                 title: "STEPS",
                 link: "See all Recodes",
                 status: "Good",
+                count: 1258,
                 icon1: <HealthAndSafetyRoundedIcon />,
                 icon2: <DirectionsWalkRoundedIcon className='icon-w' />,
             };
@@ -60,11 +78,13 @@ const Widget = ({ type  }) => {
             };
     }
 
+    
+
     return (
         <div className='widget'>
             <div className="left-widget">
                 <span className="title">{data.title}</span>
-                <span className="Count">4567</span>
+                <span className="Count">{data.count}</span>
                 <span className="link-w">{data.link}</span>
             </div>
             <div className="right-widget">

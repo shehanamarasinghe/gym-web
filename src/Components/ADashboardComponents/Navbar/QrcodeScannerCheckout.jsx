@@ -67,7 +67,7 @@ function QrcodeScanner({ onClose }) {
     console.log('Befor If Data sent to backend');
     try {
       console.log('Data sent to backend');
-      await axios.post("/store-data", { userdata });
+      await axios.post("/store-data/checkout", { userdata });
     
       console.log('Data sent to backend');
     } catch (error) {

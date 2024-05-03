@@ -7,79 +7,72 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function AMealplanAdd({ onClose }) {
-  const [value, setValue] = useState('');
-  const modalRef = useRef();
-  const navigate = useNavigate();
+  const [mealNames, setMealNames] = useState([]);
 
   const [inputs, setInputs] = useState({
-    Mtitle: "",
-    Desce: "",
-    sunb: "",
-    monb: "",
-    tueb: "",
-    wenb: "",
-    thub: "",
-    frib: "",
-    satb: "",
-    sunl: "",
-    monl: "",
-    tuel: "",
-    wenl: "",
-    thul: "",
-    fril: "",
-    satl: "",
-    sund: "",
-    mond: "",
-    tued: "",
-    wend: "",
-    thud: "",
-    frid: "",
-    satd: "",
-    username: "",
-    Userc: ""
-  });
+    MTitle: '', MDescription: '', SunBreak:'',
+    MonBreak:'',
+    TueBreak:'',
+    WenBreak:'',
+    ThuBreak:'',
+    FriBreak:'',
+    SatBreak:'',
+    SunLun:'',
+    MonLun:'',
+    TueLun:'',
+    WenLun:'',
+    ThuLun:'',
+    FriLun:'',
+    SatLun:'',
+    SunDinner:'',
+    MonDinner:'',
+    TueDinner:'',
+    WenDinner:'',
+    ThuDinner:'',
+    FriDinner:'',
+    SatDinner:'',
+    Userc:'',
 
-  const [mealOptions, setMealOptions] = useState([]);
-  const [err, setError] = useState(null);
+  });
+  const [error, setError] = useState(null);
+  const modalRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMealNames = async () => {
       try {
-        const response = await axios.get("/AddMemberMeal");
-        const mealNames = response.data;
-        setMealOptions(mealNames);
+        const response = await axios.get('/AddMemberMeal');
+        setMealNames(response.data.map(meal => meal.MealName));
       } catch (error) {
-        console.error("Error fetching meal names:", error);
-        setError("Error fetching meal names");
+        console.error('Error fetching meal names:', error);
+        setError('Error fetching meal names');
       }
     };
-  
+
     fetchMealNames();
   }, []);
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setInputs(prevInputs => ({ ...prevInputs, [name]: value }));
+  const handleChange = (e) => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleFile = e => {
-    const file = e.target.files[0];
-    setInputs(prevInputs => ({ ...prevInputs, MImage: file }));
+  const handleEditorChange = (content) => {
+    setInputs(prev => ({ ...prev, MDescription: content }));
   };
 
-  const handleSubmit = async e => {
+  const handleMealSelect = (e) => {
+      setInputs(prev => ({...prev, [e.target.name]: e.target.value}));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formdata = new FormData();
-      formdata.append('MImage', inputs.MImage);
-      await axios.post("/AddMemberMeal", inputs);
-      await axios.post("/AddMemberMeal/upload", formdata);
+      await axios.post("/AddMemberMeal/mealplan", { ...inputs });
       navigate('/AMealPlan');
     } catch (err) {
-      setError(err.response.data);
+      setError(err.response.data.error);
     }
   };
-
   const closeModal = e => {
     if (modalRef.current === e.target) {
       onClose();
@@ -93,9 +86,9 @@ function AMealplanAdd({ onClose }) {
         <div className="AMaddmealbody">
           <div className="write">
             <div className="AMcontent">
-              <input type='text' placeholder='Title' name='Mtitle' onChange={handleChange} />
+              <input type='text' placeholder='Title' name='MTitle' onChange={handleChange} />
               <div className="editorcontainer">
-                <ReactQuill className='editor' theme="snow" value={value} onChange={setValue} />
+                <ReactQuill className='editor' theme="snow" onChange={handleEditorChange} />
               </div>
               <div className="AMTable">
                 <div className="AMTWeekdays">
@@ -110,156 +103,176 @@ function AMealplanAdd({ onClose }) {
                 </div>
                 <div className="AMBreakfast">
                   <h1>Breakfast</h1>
-                  <select name="sunb1" className='dropdownlist' onChange={handleChange}>
-                    <option value="">Select</option>
-                    {mealOptions.map((meal, index) => (
-                      <option key={index} value={meal}>{meal}</option>
-                    ))}
-                  </select>
+                  <select className='dropdownlist' name='SunBreak' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                  <select name="sunb2" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='MonBreak' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                    <select name="sunb3" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb4" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='TueBreak' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                     <select name="sunb21" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb5" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='WenBreak' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                    <select name="sunb6" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+
+                <select className='dropdownlist' name='ThuBreak' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='FriBreak' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='SatBreak' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
                 </div>
                 <div className="AMBreakfast">
                   <h1>Lunch</h1>
-                  <select name="sunb7" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                  <select className='dropdownlist' name='SunLun' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                    <select name="sunb8" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb9" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='MonLun' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                    <select name="sunb10" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb11" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='TueLun' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                    <select name="sunb12" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb13" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='WenLun' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='ThuLun' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='FriLun' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='SatLun' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
                 </div>
                 <div className="AMBreakfast">
                   <h1>Dinner</h1>
-                  <select name="sunb14" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                  <select className='dropdownlist' name='SunDinner' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                    <select name="sunb15" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb16" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='MonDinner' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                                    <select name="sunb17" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb18" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='TueDinner' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
 
-                    <select name="sunb19" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
 
-                    <select name="sunb20" className='dropdownlist' onChange={handleChange}>
-                      <option value="">Select</option>
-                      {mealOptions.map((meal, index) => (
-                        <option key={index} value={meal}>{meal}</option>
-                      ))}
-                    </select>
+                <select className='dropdownlist' name='WenDinner' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='ThuDinner' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='FriDinner' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
+
+                <select className='dropdownlist' name='SatDinner' onChange= {handleMealSelect}>
+                  <option value="">Select Meal</option>
+                  {mealNames.map((mealName, index) => (
+                    <option key={index} value={mealName}>{mealName}</option>
+                  ))}
+                </select>
+
                 </div>
               </div>
             </div>
@@ -272,7 +285,7 @@ function AMealplanAdd({ onClose }) {
                 <span>
                   <b>Visibility: </b> Public
                 </span>
-                <input type='file' onChange={handleFile} />
+                <input type='file'/>
                 <label className='AMfile' htmlFor='file'>Upload Image</label>
                 <div className="AMbuttons">
                   <button className='AMbutton1'>Save as Draft</button>
@@ -284,13 +297,19 @@ function AMealplanAdd({ onClose }) {
                 <div className="AMuserc">
                   <input type='radio' name='Userc' value="Cardio" id='users' onChange={handleChange} />
                   <label htmlFor='users'>Cardio</label>
+                  <input type='radio' name='Userc' value="cardio1" id='users' onChange={handleChange} />
+                  <label htmlFor='users'>Cardio</label>
+                  <input type='radio' name='Userc' value="Cardio2" id='users' onChange={handleChange} />
+                  <label htmlFor='users'>Cardio</label>
+                  <input type='radio' name='Userc' value="Cardio3" id='users' onChange={handleChange} />
+                  <label htmlFor='users'>Cardio</label>
                 </div>
               </div>
-              <div className="useridget">
+              {/* <div className="useridget">
                 <h1>User Search</h1>
                 <input type="text" placeholder="Enter username" name='username' onChange={handleChange} />
                 <button>Search</button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

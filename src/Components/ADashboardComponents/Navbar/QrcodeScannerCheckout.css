@@ -1,0 +1,40 @@
+.scanner{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.QRclosebtn{
+
+    margin-top: 2.5rem; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.25rem;
+    color: #ffffff;
+}
+
+.QRaddmealbody{
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding-right: 5rem;
+    padding-left: 5rem; 
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem; 
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.25rem;
+    align-items: center;
+    margin-left: 1rem; 
+    margin-right: 1rem;
+}
+
+.QRheading{
+    color: black;
+}
